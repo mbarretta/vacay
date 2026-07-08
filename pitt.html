@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pittsburgh Getaway Itinerary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Smooth transitions for expandable cards */
+        .expandable-content { transition: max-height 0.3s ease-in-out; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased pb-12">
+
+    <!-- Header Section -->
+    <header class="bg-slate-900 text-white py-8 px-4 text-center shadow-lg relative overflow-hidden">
+        <div class="relative z-10">
+            <h1 class="text-3xl font-bold tracking-tight">Pittsburgh Getaway</h1>
+            <p class="text-slate-300 text-sm mt-2 font-medium">Thursday, July 9 – Saturday, July 11</p>
+        </div>
+        <!-- Decorative background elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+    </header>
+
+    <!-- Interactive Day Tabs -->
+    <div class="sticky top-0 z-50 bg-slate-50/90 backdrop-blur-md shadow-sm border-b border-slate-200">
+        <div class="max-w-md mx-auto flex p-3 space-x-2">
+            <button id="tab1" onclick="switchTab(1)" class="tab-btn flex-1 py-2.5 rounded-lg text-sm font-bold bg-slate-900 text-white shadow-sm transition-colors">Thu</button>
+            <button id="tab2" onclick="switchTab(2)" class="tab-btn flex-1 py-2.5 rounded-lg text-sm font-bold bg-white text-slate-600 border border-slate-200 shadow-sm transition-colors">Fri</button>
+            <button id="tab3" onclick="switchTab(3)" class="tab-btn flex-1 py-2.5 rounded-lg text-sm font-bold bg-white text-slate-600 border border-slate-200 shadow-sm transition-colors">Sat</button>
+        </div>
+    </div>
+
+    <main class="max-w-md mx-auto px-4 py-6">
+
+        <!-- ==================== DAY 1: THURSDAY ==================== -->
+        <section id="day1" class="day-content space-y-4 animate-fade-in">
+            <div class="mb-6 px-1">
+                <h2 class="text-xl font-extrabold text-slate-900">Downtown & World Cup</h2>
+                <p class="text-sm text-slate-500 font-medium mt-1"><i class="fa-solid fa-person-walking mr-1"></i> Zero Rideshares • <i class="fa-solid fa-umbrella mr-1"></i> Rain-Friendly</p>
+            </div>
+
+            <!-- Event 1 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <button onclick="toggleCard('d1e1')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-amber-100 text-amber-700 font-bold rounded-md px-2 py-1 text-xs">10:00 AM</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">La Prima Espresso</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">Downtown Italian Roaster</p>
+                        </div>
+                    </div>
+                    <i id="icon-d1e1" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d1e1" class="hidden border-t border-slate-100 bg-slate-50/50 p-4">
+                    <p class="text-sm text-slate-600 mb-4">Take the Monongahela Incline down and walk across the Smithfield Bridge for an old-world espresso to kick off the rainy morning.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=La+Prima+Espresso+Downtown+Pittsburgh&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=La+Prima+Espresso+Downtown+Pittsburgh" target="_blank" class="flex-1 bg-slate-900 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-800"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                        <a href="https://laprima.com/" target="_blank" class="flex-1 bg-white border border-slate-300 text-slate-700 text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-50"><i class="fa-solid fa-globe mr-1"></i> Website</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <button onclick="toggleCard('d1e2')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-slate-100 text-slate-600 font-bold rounded-md px-2 py-1 text-xs">Mid-Day</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Fort Pitt Museum</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">Point State Park History</p>
+                        </div>
+                    </div>
+                    <i id="icon-d1e2" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d1e2" class="hidden border-t border-slate-100 bg-slate-50/50 p-4">
+                    <p class="text-sm text-slate-600 mb-4">Walk out to the Point. An immersive, indoor deep dive into the region's early frontier history out of the rain.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=Fort+Pitt+Museum+Pittsburgh&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=Fort+Pitt+Museum+Pittsburgh" target="_blank" class="flex-1 bg-slate-900 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-800"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                        <a href="https://www.heinzhistorycenter.org/fort-pitt/" target="_blank" class="flex-1 bg-white border border-slate-300 text-slate-700 text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-50"><i class="fa-solid fa-globe mr-1"></i> Website</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="bg-white rounded-xl shadow-sm border-2 border-amber-400 overflow-hidden relative">
+                <div class="absolute top-0 right-0 bg-amber-400 text-amber-900 text-[10px] font-bold px-2 py-1 rounded-bl-lg uppercase tracking-wider">Game Time</div>
+                <button onclick="toggleCard('d1e3')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-amber-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-amber-500 text-white font-bold rounded-md px-2 py-1 text-xs shadow-sm">4:00 PM</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">City Works</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">Market Square Sports Pub</p>
+                        </div>
+                    </div>
+                    <i id="icon-d1e3" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d1e3" class="hidden border-t border-amber-100 bg-amber-50/30 p-4">
+                    <p class="text-sm text-slate-600 mb-4">World Cup Kickoff! Settle in with 15 massive HDTVs, 90 craft beers on tap, and elevated pub fare like truffle mushroom burgers.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=City+Works+Market+Square+Pittsburgh&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=City+Works+Market+Square+Pittsburgh" target="_blank" class="flex-1 bg-amber-500 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-amber-600"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                        <a href="https://www.cityworksrestaurant.com/locations/pittsburgh-2/" target="_blank" class="flex-1 bg-white border border-slate-300 text-slate-700 text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-50"><i class="fa-solid fa-globe mr-1"></i> Menu</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <button onclick="toggleCard('d1e4')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-slate-800 text-white font-bold rounded-md px-2 py-1 text-xs">Evening</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Con Alma</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">Live Jazz & Cocktails</p>
+                        </div>
+                    </div>
+                    <i id="icon-d1e4" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d1e4" class="hidden border-t border-slate-100 bg-slate-50/50 p-4">
+                    <p class="text-sm text-slate-600 mb-4">Walk over to the Cultural District for world-class live jazz, brilliant cocktails, and a sophisticated, moody atmosphere.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=Con+Alma+Downtown+Pittsburgh&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=Con+Alma+Downtown+Pittsburgh" target="_blank" class="flex-1 bg-slate-900 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-800"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                        <a href="https://www.conalmapgh.com/" target="_blank" class="flex-1 bg-white border border-slate-300 text-slate-700 text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-50"><i class="fa-solid fa-globe mr-1"></i> Website</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DAY 2: FRIDAY ==================== -->
+        <section id="day2" class="day-content space-y-4 hidden animate-fade-in">
+            <div class="mb-6 px-1">
+                <h2 class="text-xl font-extrabold text-slate-900">Strip District Deep Dive</h2>
+                <p class="text-sm text-slate-500 font-medium mt-1"><i class="fa-solid fa-car mr-1"></i> 1 Morning Rideshare • <i class="fa-solid fa-building mr-1"></i> Rain Refuge</p>
+            </div>
+
+            <!-- Event 1 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <button onclick="toggleCard('d2e1')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-blue-100 text-blue-700 font-bold rounded-md px-2 py-1 text-xs">10:00 AM</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Cafe Raymond</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">Legendary Strip Brunch</p>
+                        </div>
+                    </div>
+                    <i id="icon-d2e1" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d2e1" class="hidden border-t border-slate-100 bg-slate-50/50 p-4">
+                    <p class="text-sm text-slate-600 mb-4">Brisket hash or blueberry ricotta pancakes. If there's a short line, grab a coffee at the original La Prima counter nearby.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=Cafe+Raymond+Pittsburgh&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=Cafe+Raymond+Pittsburgh" target="_blank" class="flex-1 bg-slate-900 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-800"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                        <a href="https://caferaymond.com/" target="_blank" class="flex-1 bg-white border border-slate-300 text-slate-700 text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-50"><i class="fa-solid fa-globe mr-1"></i> Menu</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <button onclick="toggleCard('d2e2')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-slate-100 text-slate-600 font-bold rounded-md px-2 py-1 text-xs">Afternoon</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Heinz History Center</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">6 Floors of Regional Lore</p>
+                        </div>
+                    </div>
+                    <i id="icon-d2e2" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d2e2" class="hidden border-t border-slate-100 bg-slate-50/50 p-4">
+                    <p class="text-sm text-slate-600 mb-4">A sprawling indoor Smithsonian affiliate. Spend hours exploring sports and industrial history to escape the wet weather.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=Senator+John+Heinz+History+Center+Pittsburgh&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=Senator+John+Heinz+History+Center+Pittsburgh" target="_blank" class="flex-1 bg-slate-900 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-800"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                        <a href="https://www.heinzhistorycenter.org/" target="_blank" class="flex-1 bg-white border border-slate-300 text-slate-700 text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-50"><i class="fa-solid fa-ticket mr-1"></i> Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="bg-white rounded-xl shadow-sm border-2 border-amber-400 overflow-hidden relative">
+                <div class="absolute top-0 right-0 bg-amber-400 text-amber-900 text-[10px] font-bold px-2 py-1 rounded-bl-lg uppercase tracking-wider">Game Time</div>
+                <button onclick="toggleCard('d2e3')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-amber-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-amber-500 text-white font-bold rounded-md px-2 py-1 text-xs shadow-sm">3:00 PM</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Roland's Seafood Grill</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">Strip District Tavern</p>
+                        </div>
+                    </div>
+                    <i id="icon-d2e3" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d2e3" class="hidden border-t border-amber-100 bg-amber-50/30 p-4">
+                    <p class="text-sm text-slate-600 mb-4">World Cup Kickoff! Walk down Penn Avenue to this sprawling, brick-lined neighborhood tavern featuring a huge wrap-around bar loaded with TVs and draft beers.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=Roland's+Seafood+Grill+Pittsburgh&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=Roland's+Seafood+Grill+Pittsburgh" target="_blank" class="flex-1 bg-amber-500 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-amber-600"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                        <a href="https://rolandspittsburgh.com/" target="_blank" class="flex-1 bg-white border border-slate-300 text-slate-700 text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-50"><i class="fa-solid fa-globe mr-1"></i> Website</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 4 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <button onclick="toggleCard('d2e4')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-slate-800 text-white font-bold rounded-md px-2 py-1 text-xs">Dinner</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Bar Marco</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">Intimate Firehouse Dining</p>
+                        </div>
+                    </div>
+                    <i id="icon-d2e4" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d2e4" class="hidden border-t border-slate-100 bg-slate-50/50 p-4">
+                    <p class="text-sm text-slate-600 mb-4">Deep neighborhood charm replacing stuffy white tablecloths. Phenomenal European-inspired menu and curated wine list.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=Bar+Marco+Pittsburgh&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=Bar+Marco+Pittsburgh" target="_blank" class="flex-1 bg-slate-900 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-800"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                        <a href="https://www.barmarcopgh.com/" target="_blank" class="flex-1 bg-white border border-slate-300 text-slate-700 text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-50"><i class="fa-solid fa-globe mr-1"></i> Website</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 5 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <button onclick="toggleCard('d2e5')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-slate-800 text-white font-bold rounded-md px-2 py-1 text-xs">Night</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Kingfly Spirits</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">Distillery in a Carriage House</p>
+                        </div>
+                    </div>
+                    <i id="icon-d2e5" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d2e5" class="hidden border-t border-slate-100 bg-slate-50/50 p-4">
+                    <p class="text-sm text-slate-600 mb-4">Walk down the block to this gorgeously restored space. They distill on-site and frequently host atmospheric live music sets.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=Kingfly+Spirits+Pittsburgh&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=Kingfly+Spirits+Pittsburgh" target="_blank" class="flex-1 bg-slate-900 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-800"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                        <a href="https://kingflyspirits.com/" target="_blank" class="flex-1 bg-white border border-slate-300 text-slate-700 text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-50"><i class="fa-solid fa-globe mr-1"></i> Website</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== DAY 3: SATURDAY ==================== -->
+        <section id="day3" class="day-content space-y-4 hidden animate-fade-in">
+            <div class="mb-6 px-1">
+                <h2 class="text-xl font-extrabold text-slate-900">North Side Parks & Art</h2>
+                <p class="text-sm text-slate-500 font-medium mt-1"><i class="fa-solid fa-train mr-1"></i> Free Light Rail • <i class="fa-solid fa-sun mr-1"></i> Sunny Outdoors</p>
+            </div>
+
+            <!-- Event 1 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <button onclick="toggleCard('d3e1')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-emerald-100 text-emerald-700 font-bold rounded-md px-2 py-1 text-xs">10:00 AM</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Allegheny Commons Park</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">19th-Century Landscapes</p>
+                        </div>
+                    </div>
+                    <i id="icon-d3e1" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d3e1" class="hidden border-t border-slate-100 bg-slate-50/50 p-4">
+                    <p class="text-sm text-slate-600 mb-4">Take the free "T" to the North Side. Enjoy the clearing weather by strolling mature tree canopies and historic Victorian row houses.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=Allegheny+Commons+Park+Pittsburgh&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=Allegheny+Commons+Park+Pittsburgh" target="_blank" class="flex-1 bg-slate-900 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-800"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <button onclick="toggleCard('d3e2')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-slate-100 text-slate-600 font-bold rounded-md px-2 py-1 text-xs">Afternoon</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">The Andy Warhol Museum</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">Iconic Pop Culture</p>
+                        </div>
+                    </div>
+                    <i id="icon-d3e2" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d3e2" class="hidden border-t border-slate-100 bg-slate-50/50 p-4">
+                    <p class="text-sm text-slate-600 mb-4">Seven floors of deeply engaging exhibits, film, and art history at the largest single-artist museum in North America.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=Andy+Warhol+Museum+Pittsburgh&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=Andy+Warhol+Museum+Pittsburgh" target="_blank" class="flex-1 bg-slate-900 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-800"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                        <a href="https://www.warhol.org/" target="_blank" class="flex-1 bg-white border border-slate-300 text-slate-700 text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-50"><i class="fa-solid fa-globe mr-1"></i> Website</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <button onclick="toggleCard('d3e3')" class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-slate-50 transition-colors">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-slate-800 text-white font-bold rounded-md px-2 py-1 text-xs">Dinner</div>
+                        <div>
+                            <h3 class="font-bold text-slate-900">Fig & Ash</h3>
+                            <p class="text-xs text-slate-500 line-clamp-1">Wood-Fired Comfort</p>
+                        </div>
+                    </div>
+                    <i id="icon-d3e3" class="fa-solid fa-chevron-down text-slate-400 transition-transform duration-300"></i>
+                </button>
+                <div id="d3e3" class="hidden border-t border-slate-100 bg-slate-50/50 p-4">
+                    <p class="text-sm text-slate-600 mb-4">Cap off the trip on East Ohio Street. A wonderfully warm, upmarket gem executing incredible scratch-cooked mains without the pretension.</p>
+                    <iframe class="w-full h-40 rounded-lg shadow-inner mb-3 border border-slate-200" src="https://maps.google.com/maps?q=Fig+and+Ash+Pittsburgh&t=&z=16&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div class="flex space-x-2">
+                        <a href="https://maps.google.com/?q=Fig+and+Ash+Pittsburgh" target="_blank" class="flex-1 bg-slate-900 text-white text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-800"><i class="fa-solid fa-location-arrow mr-1"></i> Directions</a>
+                        <a href="https://www.figandashpgh.com/" target="_blank" class="flex-1 bg-white border border-slate-300 text-slate-700 text-center py-2 rounded-lg text-sm font-semibold hover:bg-slate-50"><i class="fa-solid fa-globe mr-1"></i> Website</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 text-xs text-slate-400">
+        <p>Interactive Map Itinerary • Tap any card to expand</p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Start by opening the first card of Day 1
+        window.addEventListener('DOMContentLoaded', () => {
+            toggleCard('d1e1');
+        });
+
+        function switchTab(day) {
+            // Hide all day sections
+            document.querySelectorAll('.day-content').forEach(el => {
+                el.classList.add('hidden');
+            });
+            // Show the selected day
+            document.getElementById('day' + day).classList.remove('hidden');
+            
+            // Reset all tab styling
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('bg-slate-900', 'text-white');
+                el.classList.add('bg-white', 'text-slate-600');
+            });
+            // Activate selected tab
+            const activeTab = document.getElementById('tab' + day);
+            activeTab.classList.add('bg-slate-900', 'text-white');
+            activeTab.classList.remove('bg-white', 'text-slate-600');
+            
+            // Auto-open first card of the selected day if all are closed
+            const firstCardId = 'd' + day + 'e1';
+            const firstCard = document.getElementById(firstCardId);
+            if(firstCard && firstCard.classList.contains('hidden')) {
+                toggleCard(firstCardId);
+            }
+        }
+
+        function toggleCard(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
